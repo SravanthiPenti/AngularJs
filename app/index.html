@@ -18,7 +18,7 @@
     <br>
     <br>
     <!-- Search:<input type="text" placeholder="search employee" ng-model="searchText"> -->
-    Seach:<input type="text" placeholder="Search by Name" ng-model="searchText.firstname">
+    <!-- Seach:<input type="text" placeholder="Search by Name" ng-model="searchText.firstname"> -->
     <!-- Sorting Order<select ng-model="sortBy">
         <option value="firstnamename">FirstName Asc</option>
         <option value="gender">Gender Asc</option>
@@ -38,10 +38,10 @@
     </tr>
 </thead>
 <tbody>
-    <tr ng-repeat="emp in emp | filter:searchText">
+    <tr ng-repeat="emp in emp ">
         <td>{{emp.firstname | uppercase}}</td>
         <td>{{emp.lastname}}</td>
-        <td>{{emp.gender | lowercase}}</td>
+        <td>{{emp.gender | gender}}</td>
         <td>{{emp.salary | currency }}</td>            
     </tr>
 </tbody>
