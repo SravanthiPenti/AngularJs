@@ -14,40 +14,12 @@
 
 <body ng-app="angular1App"> 
         <div ng-controller="myController">
-    Rows to display<input type="number" step="1" min="0" max="5" ng-model="rowlimit">
-    <br>
-    <br>
-    <!-- Search:<input type="text" placeholder="search employee" ng-model="searchText"> -->
-    <!-- Seach:<input type="text" placeholder="Search by Name" ng-model="searchText.firstname"> -->
-    <!-- Sorting Order<select ng-model="sortBy">
-        <option value="firstnamename">FirstName Asc</option>
-        <option value="gender">Gender Asc</option>
-        <option value="lastname">LastName Asc</option>
-        <option value="salary">Salary Asc</option>
-            
-    </select> -->
-    <table border=1>
-<thead>
-    <tr>
-    <!-- <th ng-click="sortData('firstname')">FirstName <div ng-class="getSortOrder('firstname')"></div></th>
-    <th ng-click="sortData('lastname')">LastName <div ng-class="getSortOrder('lastname')"></div></th> -->
-    <th>FirstName</th>
-    <th>LastName</th>
-    <th>Gender</th>
-    <th>Salary</th>
-    </tr>
-</thead>
-<tbody>
-    <tr ng-repeat="emp in emp ">
-        <td>{{emp.firstname | uppercase}}</td>
-        <td>{{emp.lastname}}</td>
-        <td>{{emp.gender | gender}}</td>
-        <td>{{emp.salary | currency }}</td>            
-    </tr>
-</tbody>
-  
-
-  </table>
+           Select Displayed View 
+           <select ng-model="employeeView">
+                <option value="views/table.html">Table</option>
+                <option value="views/list.html">List</option>
+            </select>
+   <div ng-include="employeeView"></div>
 </div>
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>

@@ -36,4 +36,5 @@ myapp.controller("myController", function ($scope) {
     //    return ' ';
     //  }
     // }
+    $scope.employeeView="views/table.html"
 })
