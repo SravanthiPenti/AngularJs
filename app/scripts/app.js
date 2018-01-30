@@ -13,13 +13,14 @@ myapp.filter("gender",function(){
     }
   }
 })
-myapp.controller("myController", function ($scope) {
+myapp.controller("myController", function ($scope,$location) {
     var emp=[{firstname:"Ben",lastname:"Hasting",gender:1,salary:55000},
     {firstname:"Sara",lastname:"Paul",gender:2,salary:68000},
     {firstname:"Mark",lastname:"Holland",gender:1,salary:57000},
     {firstname:"Pam",lastname:"Macintosh",gender:2,salary:53500},
     {firstname:"Todd",lastname:"Barber",gender:1,salary:59500}]
     $scope.emp=emp;
+    $scope.myUrl=$location.absUrl();
     // $scope.rowlimit=2;
     // $scope.sortBy="firstname"
     // $scope.revertOrder=false;
