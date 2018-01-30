@@ -12,31 +12,39 @@
 
 </head>
 
-<body ng-app="angular1App">
-  <table ng-controller="myController" border=1>
-      
-          <thead>
-            <tr>
-                <th>Technology</th>
-                <th>Like</th>
-                <th>Dislike</th>
-                <th>Like/Dislike</th>
-            </tr>
-          </thead>
-          <tbody>
-              <tr ng-repeat="technology in technologies">
-                <td>{{technology.name}}</td>
-                <td>{{technology.like}}</td>
-                <td>{{technology.dislike}}</td>
-                <td><input type="button" value="like" ng-click="incrementLike(technology)">
-                
-                    <input type="button" value="dislike" ng-click="incrementDislike(technology)">
-                </td>
-              </tr>
-          </tbody>
-      
+<body ng-app="angular1App"> 
+        <div ng-controller="myController">
+    Rows to display<input type="number" step="1" min="0" max="5" ng-model="rowlimit">
+    <br>
+    <br>
+    <!-- Sorting Order<select ng-model="sortBy">
+        <option value="firstnamename">FirstName Asc</option>
+        <option value="gender">Gender Asc</option>
+        <option value="lastname">LastName Asc</option>
+        <option value="salary">Salary Asc</option>
+            
+    </select> -->
+    <table border=1>
+<thead>
+    <tr>
+    <th ng-click="sortData('firstname')">FirstName <div ng-class="getSortOrder('firstname')"></div></th>
+    <th ng-click="sortData('lastname')">LastName <div ng-class="getSortOrder('lastname')"></div></th>
+    <th>Gender</th>
+    <th>Salary</th>
+    </tr>
+</thead>
+<tbody>
+    <tr ng-repeat="emp in emp | orderBy:sortBy:revertOrder">
+        <td>{{emp.firstname | uppercase}}</td>
+        <td>{{emp.lastname}}</td>
+        <td>{{emp.gender | lowercase}}</td>
+        <td>{{emp.salary | currency }}</td>            
+    </tr>
+</tbody>
+  
 
   </table>
+</div>
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
