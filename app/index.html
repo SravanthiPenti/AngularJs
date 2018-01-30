@@ -13,38 +13,30 @@
 </head>
 
 <body ng-app="angular1App">
-    <!--  <table ng-controller="myController" border=1>
-        <thead>
+  <table ng-controller="myController" border=1>
+      
+          <thead>
             <tr>
-                <th>FirstName</th>
-                <th>LastName</th>
-                <th>Gender</th>
-                <th>Salary</th>
-                </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="employee in emp">
-                <td>{{employee.firstname}}</td>
-                <td>{{employee.lastname}}</td>
-                <td>{{employee.gender}}</td>
-                <td>{{employee.salary}}</td>
+                <th>Technology</th>
+                <th>Like</th>
+                <th>Dislike</th>
+                <th>Like/Dislike</th>
             </tr>
-        </tbody>
-    </table> -->
-    <div ng-controller="myController">
-        <ul>
-            <li ng-repeat="state in states" ng-init="ParentIndex=$index">{{state.name}} Index-{{$index}}
-                <ul>
-                    <li ng-repeat="dist in state.dist">
-                        {{dist.name}} Index-{{$index}} Parent-Index-{{$parent.$index}} Parent-Index--{{ParentIndex}}
-                    </li>
-                </ul>
+          </thead>
+          <tbody>
+              <tr ng-repeat="technology in technologies">
+                <td>{{technology.name}}</td>
+                <td>{{technology.like}}</td>
+                <td>{{technology.dislike}}</td>
+                <td><input type="button" value="like" ng-click="incrementLike(technology)">
+                
+                    <input type="button" value="dislike" ng-click="incrementDislike(technology)">
+                </td>
+              </tr>
+          </tbody>
+      
 
-
-
-            </li>
-        </ul>
-    </div>
+  </table>
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
