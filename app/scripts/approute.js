@@ -14,6 +14,15 @@ var app=angular.module("RouteDemo",["ngRoute"])
                                 templateUrl:"RouteTemplate/list.html",
                                 controller:("tableController")
                             })
+
+                            .when("/table/:firstname",{
+                                templateUrl:"RouteTemplate/empDetails.html",
+                                controller:("empDetails")
+                            })
+
+                            .otherwise({
+                                redirectTo:"/home"
+                            })
                             $locationProvider.html5Mode(true);
                 })
                 .controller("homeController",function($scope){
@@ -28,4 +37,7 @@ var app=angular.module("RouteDemo",["ngRoute"])
                     {firstname:"Todd",lastname:"Barber",gender:1,salary:59500}]
                     $scope.emp=emp;
                 })
-           
+                .controller("empDetails",function($scope,$route,$routeParams){
+                    var param=$route.current.params.firstname;
+                    $scope.employee=param;
+                })
