@@ -19,3 +19,9 @@ app.controller("ServiceController",function($scope,$timeout){
             {model : "Volvo XC90", color : "black"}
         ]
     })
+    app.controller("AnchorServiceCntrl",function($scope,$location,$anchorScroll){
+        $scope.scroll=function(scrollto){
+            $location.hash(scrollto);
+            $anchorScroll();
+        }
+    })
