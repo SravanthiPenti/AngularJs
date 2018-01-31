@@ -24,3 +24,9 @@ th{
   font-size:large;
   padding: 5px;
 }
+.header{
+  width:400px;
+  padding:10px;
+  background-color: antiquewhite;
+
+}
