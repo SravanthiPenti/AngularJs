@@ -37,6 +37,7 @@ var app=angular.module("RouteDemo",["ngRoute"])
                     {firstname:"Todd",lastname:"Barber",gender:1,salary:59500}]
                     $scope.emp=emp;
                 })
+               
                 .controller("empDetails",function($scope,$route,$routeParams){
                     var param=$route.current.params.firstname;
                     $scope.employee=param;

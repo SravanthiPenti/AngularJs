@@ -13,13 +13,24 @@
    
 </head>
 
-<body ng-app="RouteDemo">
+<body ng-app="ControllerAsExample">
 
-<a href="home">Home</a>
+<!-- <a href="home">Home</a>
 <a href="table">Table</a>
 <a href="list">List</a>
 <div>
 <ng-view></ng-view>
+</div> -->
+<div ng-controller="CountryController as country">
+    {{country.name}}
+    <div ng-controller="StateController as state">
+        {{country.name}}-{{state.name}}
+        <div ng-controller="CityController as city">
+                {{country.name}}-{{state.name}}-{{city.name}}
+        </div>
+
+    </div>
+
 </div>
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -38,6 +49,7 @@
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
    <script src= "scripts/approute.js"></script>
+   <script src="scripts/controllers/controllerAs.js"></script>
 </body>
 
 </html>
